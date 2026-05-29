@@ -33,5 +33,5 @@ def main():
     pi2 = (4 * total_inside / points)
     print(f"Результаты синхронного выпонения: {time.time() - start}, {pi2}")
 
-if __name__ == "__main__":
+if __name__ == "__multiprocessing_main__":
     main() 

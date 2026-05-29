@@ -6,3 +6,5 @@ def main():
     parallel_threading.main()
     parallel_processing.main()
     parallel_async.main()
+if __name__ == "__main__":
+    main()

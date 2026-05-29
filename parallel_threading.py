@@ -2,6 +2,7 @@ import threading as th
 import queue as q
 import time
 import random as rd
+import os
 
 file_lock = th.Lock()
 dat_queue = q.Queue()
@@ -58,6 +59,8 @@ def multithreading():
     writter.start()
     dat_queue.put('-1')
     writter.join()
+    os.remove("input.txt")
+    os.remove("output.txt")     
 
 def sync():
     for _ in range(5):
@@ -74,6 +77,8 @@ def sync():
             s1 = file.read(i)
         with open("output.txt", "a", encoding="utf-8") as file:
             file.write(s1)
+    os.remove("input.txt")
+    os.remove("output.txt")    
 
 def main():
     print("Многопоточность:")
